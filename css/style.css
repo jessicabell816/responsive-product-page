@@ -34,7 +34,6 @@ body {
   max-width:500px;
   margin: 0 auto;  
   padding: 0;
-  /* make each section have more space around them */
 }
 
 img {
@@ -45,6 +44,7 @@ img {
 h1 { 
   font-size: var(--font-size-xxl);
   font-weight: normal;
+  margin-bottom: 0;
 }
 
 h2 { 
@@ -89,12 +89,21 @@ nav ul {
   padding-left: 0;
 }
 
+
+
+
+
 nav ul li {
 /* get rid of underlines */
   padding-left: 1.5em;
   text-transform: uppercase;
   font-size: var(--font-size-md);
+  /* text-decoration: none;
+  color:fff; */
 }
+
+
+
 
 #header,
 #products,
@@ -103,8 +112,11 @@ nav ul li {
 #try-it,
 #footer{
     padding:4em 4em;
-    /* not sure why the 0 has to be there (4em 0)*/
 }
+
+
+
+
 
 /* make it one image on top and 3 under */
 .product-shot{
@@ -113,31 +125,42 @@ nav ul li {
   margin-top: 5em;
   gap: 1.5em;
 }
+.product-images{
+  display: grid;
+  /* grid-template-columns:; */
+  gap: 1.5em;
+}
+
+
+
+
+
 
 .product-shot img{
   border-radius: 5px;
 }
 
 .limited-edition{
-/* get rid of space at the top */
 text-transform: uppercase;
 font-weight: bold;
 }
 
-/* create button */
-/* .button{
+.button{
+  color: #fff;
+  background-color: #000000;
+  border-radius: 5px;
+  max-width:150px;
+  padding: .5em .5em;
+  text-align: center;
+}
 
-} */
-
-/* make text into two seperate colomns, add thin gray line above section*/
-/* #behind-the-dough{
-
-} */
-
-/* make quotes into two seperate colomns, make names underneath italic*/
 #people-saying{
   background-color: #000000;
   color: #ffffff;
+}
+
+#people-saying p{
+  font-style: italic;
 }
 
 .cookie-flavours{
@@ -168,6 +191,13 @@ font-weight: bold;
 }
 
 
+
+
+
+
+
+
+
 @media (min-width: 768px) {
 
   .product-shot{
@@ -189,26 +219,52 @@ font-weight: bold;
   .cookie-flavours {
      grid-template-columns: repeat(4, 1fr)
     }
+     /* center text  */
+   /* add thin gray line above section*/ 
+  #behind-the-dough p{
+    width: 30%;
+    display: inline-block;
+    margin: 1em;
   }
+
+  #people-saying blockquote{
+    width: 20%;
+    display: inline-block;
+    /* padding-top: 0; */ 
+  }
+}
 
 
 
 @media (min-width: 960px) {
 
-  .product-shot{
+  #products{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 5em;
     gap: 1.5em;
   }
 
-  #products article {
+  /* #products article {
     display: flex;
     flex-wrap: wrap;
-  }
+  } */
 
   #products img {
     width: 35em;
+  }
+
+  /* center text  */
+   /* add thin gray line above section*/ 
+  #behind-the-dough p{
+    width: 30%;
+    display: inline-block;
+  }
+
+  #people-saying blockquote{
+    width: 20%;
+    display: inline-block;
+    /* padding-top: 0; */ 
   }
 }
 
