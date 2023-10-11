@@ -20,7 +20,7 @@
 
 html {
   font-family:'Poppins', sans-serif;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #222;
   scroll-behavior: smooth;
   line-height: 1.4;
@@ -65,20 +65,21 @@ p {
   font-size: var(--font-size-base);
 }
 
-/* add thin gray line below section, fix nav */
-/* header {
+#header div {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-} */
-
-/* make the logo get bigger? */
   header img{
-    /* width: 15em; */
+    width: 15em;
+    padding-left: 0;
   }
 
 footer {
   font-size: var(--font-size-sm);
   text-align: center;
-  /* add thin gray line above section */
 }
 
 nav ul {
@@ -89,21 +90,18 @@ nav ul {
   padding-left: 0;
 }
 
-
-
-
-
 nav ul li {
-/* get rid of underlines */
-  padding-left: 1.5em;
-  text-transform: uppercase;
-  font-size: var(--font-size-md);
-  /* text-decoration: none;
-  color:fff; */
+    padding-left: 1.5em;
+    text-transform: uppercase;
+    font-size: var(--font-size-md);
+  }
+  
+
+nav ul li a:link,
+nav ul li a:visited {
+  color: #000;
+  text-decoration: none;
 }
-
-
-
 
 #header,
 #products,
@@ -111,30 +109,31 @@ nav ul li {
 #people-saying,
 #try-it,
 #footer{
-    padding:4em 4em;
+    padding:4em;
 }
 
-
-
-
-
-/* make it one image on top and 3 under */
-.product-shot{
-  display: grid;
-  /* grid-template-columns: 1fr 3fr; */
-  margin-top: 5em;
-  gap: 1.5em;
+#header,
+#products,
+#try-it{
+   border-bottom: .25em solid #e7e7e7;
 }
+
 .product-images{
   display: grid;
-  /* grid-template-columns:; */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+.product-shot img {
+  width: 100%;
+  max-width: 100%;
   gap: 1.5em;
 }
 
-
-
-
-
+.product-image-1 {
+  grid-column: 1 / span 3;
+}
 
 .product-shot img{
   border-radius: 5px;
@@ -193,11 +192,6 @@ font-weight: bold;
 
 
 
-
-
-
-
-
 @media (min-width: 768px) {
 
   .product-shot{
@@ -212,25 +206,30 @@ font-weight: bold;
   }
 
   .wrapper{
-    max-width:1650px;
+    max-width:100%;
     margin: 0 auto; 
   }
 
   .cookie-flavours {
      grid-template-columns: repeat(4, 1fr)
     }
-     /* center text  */
-   /* add thin gray line above section*/ 
+
+  #behind-the-dough{
+    text-align: center;
+  }
+
   #behind-the-dough p{
     width: 30%;
     display: inline-block;
-    margin: 1em;
+  }
+  
+  #people-saying{
+    text-align: center;
   }
 
   #people-saying blockquote{
     width: 20%;
     display: inline-block;
-    /* padding-top: 0; */ 
   }
 }
 
@@ -243,28 +242,51 @@ font-weight: bold;
     grid-template-columns: 1fr 1fr;
     margin-top: 5em;
     gap: 1.5em;
+    width: 100%;
+  }
+  
+  .product-shot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+    max-width: 100%;
+    gap: 1.5em;
+    margin-top: 1.5em;
   }
 
-  /* #products article {
-    display: flex;
-    flex-wrap: wrap;
-  } */
-
-  #products img {
+  .product-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    margin-top: 1.5em;
     width: 35em;
   }
+  
+  .product-shot img {
+    width: 100%;
+    gap: 1.5em;
+  }
 
-  /* center text  */
-   /* add thin gray line above section*/ 
-  #behind-the-dough p{
+   #behind-the-dough{
+    text-align: center;
+  }
+
+   #behind-the-dough p{
     width: 30%;
     display: inline-block;
+    text-align: left;
+    gap: 1.5em;
+  }
+  
+  #people-saying{
+    text-align: center;
   }
 
   #people-saying blockquote{
     width: 20%;
     display: inline-block;
-    /* padding-top: 0; */ 
+    text-align: left;
   }
 }
 
